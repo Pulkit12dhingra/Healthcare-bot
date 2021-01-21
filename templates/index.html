@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>DISEASE PREDICTION</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">  
+</head>
+<body>
+  <h1>Disease Prediction</h1>
+  <h3>This is a disease prediction application</h3>
+  <h3>Please be specific while mentioning the symptoms which you are facing</h3>
+     <!-- Main Input For Receiving Query to our ML -->
+
+  <div class="login">  
+  <br>
+     <br>
+     <br> 
+     <h3><strong>PLEASE DO MENTION YOUR SYMPTOMS IN A COMMA SEPERATED MANNER</strong></h3>
+    <form action="{{ url_for('predict')}}"method="post">
+      <p>I am facing symptoms like....</p>
+      <textarea rows="5" cols="50" name="comment" placeholder="Please Write in a comma seperated manner"> </textarea>
+      <br>
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+   {{ prediction_text }}
+   <br>
+     <p>NOTE:- Do consult a doctor to avoid confusin</p>
+ </div>
+
+
+</body>
+</html>
